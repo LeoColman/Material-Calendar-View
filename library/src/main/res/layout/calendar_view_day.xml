@@ -7,8 +7,8 @@
 
     <TextView
         android:id="@+id/dayLabel"
-        android:layout_width="@dimen/day_label_size_events_enabled"
-        android:layout_height="@dimen/day_label_size_events_enabled"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="2dp"
         android:gravity="center"
@@ -16,8 +16,8 @@
 
     <ImageView
         android:id="@+id/dayIcon"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
         android:layout_gravity="center_horizontal"
         android:layout_marginBottom="1dp"
         android:layout_marginTop="1dp"
