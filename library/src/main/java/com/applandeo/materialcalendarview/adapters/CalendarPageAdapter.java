@@ -1,23 +1,21 @@
 package com.applandeo.materialcalendarview.adapters;
 
+import static com.applandeo.materialcalendarview.utils.CalendarProperties.CALENDAR_SIZE;
+
 import android.content.Context;
 import android.support.v4.view.PagerAdapter;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
 import com.applandeo.materialcalendarview.R;
 import com.applandeo.materialcalendarview.extensions.CalendarGridView;
 import com.applandeo.materialcalendarview.listeners.DayRowClickListener;
 import com.applandeo.materialcalendarview.utils.CalendarProperties;
 import com.applandeo.materialcalendarview.utils.SelectedDay;
-
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
-
-import static com.applandeo.materialcalendarview.utils.CalendarProperties.CALENDAR_SIZE;
 
 /**
  * This class is responsible for loading a calendar page content.
@@ -133,7 +131,7 @@ public class CalendarPageAdapter extends PagerAdapter {
         Get all days of one page (42 is a number of all possible cells in one page
         (a part of previous month, current month and a part of next month))
          */
-        while (days.size() < 35) {
+        while (days.size() < 42) {
             days.add(calendar.getTime());
             calendar.add(Calendar.DAY_OF_MONTH, 1);
         }
