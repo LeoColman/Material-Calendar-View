@@ -3,7 +3,6 @@ package com.applandeo.materialcalendarview.extensions;
 import android.content.Context;
 import android.support.v4.view.ViewPager;
 import android.util.AttributeSet;
-import android.view.MotionEvent;
 import android.view.View;
 
 /**
@@ -18,16 +17,6 @@ public class CalendarViewPager extends ViewPager {
 
     public CalendarViewPager(Context context, AttributeSet attrs) {
         super(context, attrs);
-    }
-
-    @Override
-    public boolean onInterceptTouchEvent(MotionEvent ev) {
-        return false;
-    }
-
-    @Override
-    public boolean onTouchEvent(MotionEvent ev) {
-        return false;
     }
 
     //This method is needed to get wrap_content height for ViewPager
