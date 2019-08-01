@@ -4,13 +4,11 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Button;
 import android.widget.Toast;
-
 import com.applandeo.materialcalendarsampleapp.utils.DrawableUtils;
 import com.applandeo.materialcalendarview.CalendarView;
 import com.applandeo.materialcalendarview.EventDay;
 import com.applandeo.materialcalendarview.exceptions.OutOfDateRangeException;
 import com.applandeo.materialcalendarview.utils.DateUtils;
-
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
@@ -41,11 +39,13 @@ public class CalendarActivity extends AppCompatActivity {
         events.add(new EventDay(calendar2, R.drawable.sample_icon_3));
 
         Calendar calendar3 = Calendar.getInstance();
-        calendar3.add(Calendar.DAY_OF_MONTH, 7);
+        calendar3.set(Calendar.DAY_OF_MONTH, 20);
+        calendar3.set(Calendar.MONTH, 10);
         events.add(new EventDay(calendar3, R.drawable.sample_four_icons));
 
         Calendar calendar4 = Calendar.getInstance();
-        calendar4.add(Calendar.DAY_OF_MONTH, 13);
+        calendar4.set(Calendar.DAY_OF_MONTH, 1);
+        calendar4.set(Calendar.MONTH, 10);
         events.add(new EventDay(calendar4, DrawableUtils.getThreeDots(this)));
 
         CalendarView calendarView = (CalendarView) findViewById(R.id.calendarView);
@@ -54,7 +54,7 @@ public class CalendarActivity extends AppCompatActivity {
         min.add(Calendar.MONTH, -2);
 
         Calendar max = Calendar.getInstance();
-        max.add(Calendar.MONTH, 2);
+        max.add(Calendar.MONTH, 6);
 
         calendarView.setMinimumDate(min);
         calendarView.setMaximumDate(max);

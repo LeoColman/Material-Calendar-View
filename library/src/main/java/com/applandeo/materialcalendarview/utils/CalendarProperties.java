@@ -3,7 +3,6 @@ package com.applandeo.materialcalendarview.utils;
 import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.support.v4.content.ContextCompat;
-
 import com.annimon.stream.Stream;
 import com.applandeo.materialcalendarview.CalendarView;
 import com.applandeo.materialcalendarview.EventDay;
@@ -14,7 +13,6 @@ import com.applandeo.materialcalendarview.listeners.OnCalendarPageChangeListener
 import com.applandeo.materialcalendarview.listeners.OnDayClickListener;
 import com.applandeo.materialcalendarview.listeners.OnSelectDateListener;
 import com.applandeo.materialcalendarview.listeners.OnSelectionAbilityListener;
-
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
@@ -243,7 +241,7 @@ public class CalendarProperties {
 
         mDisabledDays = Stream.of(disabledDays)
                 .map(calendar -> {
-                    DateUtils.setMidnight(calendar);
+                    DateUtils.setMidDay(calendar);
                     return calendar;
                 }).toList();
     }
@@ -272,7 +270,7 @@ public class CalendarProperties {
 
         mSelectedDays = Stream.of(selectedDays)
                 .map(calendar -> {
-                    DateUtils.setMidnight(calendar);
+                    DateUtils.setMidDay(calendar);
                     return new SelectedDay(calendar);
                 }).filterNot(value -> mDisabledDays.contains(value.getCalendar()))
                 .toList();

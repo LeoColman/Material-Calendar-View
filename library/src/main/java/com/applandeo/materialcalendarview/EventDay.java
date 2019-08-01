@@ -3,9 +3,7 @@ package com.applandeo.materialcalendarview;
 import android.graphics.drawable.Drawable;
 import android.support.annotation.DrawableRes;
 import android.support.annotation.RestrictTo;
-
 import com.applandeo.materialcalendarview.utils.DateUtils;
-
 import java.util.Calendar;
 
 /**
@@ -33,7 +31,7 @@ public class EventDay {
      * @param drawable Drawable resource which will be displayed in a day cell
      */
     public EventDay(Calendar day, @DrawableRes int drawable) {
-        DateUtils.setMidnight(day);
+        DateUtils.setMidDay(day);
         mDay = day;
         mDrawable = drawable;
     }
@@ -43,7 +41,7 @@ public class EventDay {
      * @param drawable Drawable which will be displayed in a day cell
      */
     public EventDay(Calendar day, Drawable drawable) {
-        DateUtils.setMidnight(day);
+        DateUtils.setMidDay(day);
         mDay = day;
         mDrawable = drawable;
     }

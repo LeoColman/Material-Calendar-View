@@ -1,5 +1,7 @@
 package com.applandeo.materialcalendarview;
 
+import static com.applandeo.materialcalendarview.utils.CalendarProperties.FIRST_VISIBLE_PAGE;
+
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
@@ -10,7 +12,6 @@ import android.view.LayoutInflater;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-
 import com.annimon.stream.Stream;
 import com.applandeo.materialcalendarview.adapters.CalendarPageAdapter;
 import com.applandeo.materialcalendarview.exceptions.ErrorsMessages;
@@ -22,12 +23,9 @@ import com.applandeo.materialcalendarview.utils.AppearanceUtils;
 import com.applandeo.materialcalendarview.utils.CalendarProperties;
 import com.applandeo.materialcalendarview.utils.DateUtils;
 import com.applandeo.materialcalendarview.utils.SelectedDay;
-
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
-
-import static com.applandeo.materialcalendarview.utils.CalendarProperties.FIRST_VISIBLE_PAGE;
 
 /**
  * This class represents a view, displays to user as calendar. It allows to work in date picker
@@ -250,7 +248,7 @@ public class CalendarView extends LinearLayout {
     }
 
     private void setUpCalendarPosition(Calendar calendar) {
-        DateUtils.setMidnight(calendar);
+        DateUtils.setMidDay(calendar);
 
         if (mCalendarProperties.getCalendarType() == CalendarView.ONE_DAY_PICKER) {
             mCalendarProperties.setSelectedDay(calendar);

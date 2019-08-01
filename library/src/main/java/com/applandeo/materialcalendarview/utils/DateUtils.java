@@ -1,10 +1,8 @@
 package com.applandeo.materialcalendarview.utils;
 
 import android.content.Context;
-
 import com.annimon.stream.Stream;
 import com.applandeo.materialcalendarview.R;
-
 import java.util.Calendar;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -20,19 +18,14 @@ public class DateUtils {
      */
     public static Calendar getCalendar() {
         Calendar calendar = Calendar.getInstance();
-        setMidnight(calendar);
+        setMidDay(calendar);
 
         return calendar;
     }
 
-    /**
-     * This method sets an hour in the calendar object to 00:00:00:00
-     *
-     * @param calendar Calendar object which hour should be set to 00:00:00:00
-     */
-    public static void setMidnight(Calendar calendar) {
+    public static void setMidDay(Calendar calendar) {
         if (calendar != null) {
-            calendar.set(Calendar.HOUR_OF_DAY, 0);
+            calendar.set(Calendar.HOUR_OF_DAY, 12);
             calendar.set(Calendar.MINUTE, 0);
             calendar.set(Calendar.SECOND, 0);
             calendar.set(Calendar.MILLISECOND, 0);
@@ -52,10 +45,10 @@ public class DateUtils {
         }
 
         Calendar firstDay = (Calendar) firstCalendar.clone();
-        setMidnight(firstDay);
+        setMidDay(firstDay);
         firstDay.set(Calendar.DAY_OF_MONTH, 1);
         Calendar secondDay = (Calendar) secondCalendar.clone();
-        setMidnight(secondDay);
+        setMidDay(secondDay);
         secondDay.set(Calendar.DAY_OF_MONTH, 1);
 
         return secondDay.before(firstDay);
@@ -74,10 +67,10 @@ public class DateUtils {
         }
 
         Calendar firstDay = (Calendar) firstCalendar.clone();
-        setMidnight(firstDay);
+        setMidDay(firstDay);
         firstDay.set(Calendar.DAY_OF_MONTH, 1);
         Calendar secondDay = (Calendar) secondCalendar.clone();
-        setMidnight(secondDay);
+        setMidDay(secondDay);
         secondDay.set(Calendar.DAY_OF_MONTH, 1);
 
         return secondDay.after(firstDay);
